@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>Welcome to the Book Store</h1>
+    <div class="book-cards">
+        <% books.forEach(function(book) { %>
+            <div class="book-card">
+                <a href="/book/<%= book._id %>"><%= book.title %></a>
+                <p>by <%= book.author %></p>
+                <a href="/edit/<%= book._id %>">Edit</a>
+                <a href="/delete/<%= book._id %>">Delete</a>
+            </div>
+        <% }); %>
+    </div>
+    <a href="/add">Add a Book</a>
+</body>
+</html>
